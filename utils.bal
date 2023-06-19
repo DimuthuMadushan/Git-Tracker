@@ -22,7 +22,7 @@ isolated function getBranches(http:Client githubGraphqlClient, string query, jso
         }
     }
     return error("GraphQL Server Error");
-} 
+}
 
 isolated function getGraphqlQueryFromFile(string fileName) returns string|error {
     string gqlFileName = string `${fileName}.graphql`;
