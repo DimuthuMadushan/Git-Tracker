@@ -16,8 +16,8 @@
 # + public_repos - number if public repos  
 # + followers - Number if followers  
 # + following - Number of following
-type User record {
-  string name;
+type GitHubUser record {
+  string? name;
   string login;
   int id;
   string bio;
@@ -107,4 +107,106 @@ public type Owner record {
 public type License record {
     string key;
     string name;
+};
+
+# Represent create repository input payload
+#
+# + name - The name of the new repository.
+# + description - A short description of the new repository.
+# + isPrivate - Whether the repository is private.
+# + autoInit - Whether the repository is initialized with a minimal README.
+# + template - Whether this repository acts as a template that can be used to generate new repositories.
+public type CreateRepositoryInput record {
+    string name;
+    string description?;
+    boolean isPrivate?;
+    boolean autoInit?;
+    boolean template?;
+};
+
+# Represent create issue input payload.
+#
+# + title - The title for the issue.
+# + body - The body for the issue description.
+# + assigneeNames - The GitHub usernames of the user assignees for this issue.
+# + milestoneId - The Node ID of the milestone for this issue.
+# + labelNames - An array of Node IDs of labels for this issue.
+# + projectIds - An array of Node IDs for projects associated with this issue.
+# + issueTemplate - The name of an issue template in the repository, assigns labels and assignees from the template to the issue
+# + clientMutationId - A unique identifier for the client performing the mutation.
+public type CreateIssueInput record {
+    string title;
+    string body?;
+    string[] assigneeNames?;
+    string milestoneId?;
+    string[] labelNames?;
+    string[] projectIds?;
+    string issueTemplate?;
+    string clientMutationId?;
+};
+
+# Represent GitHub issue.
+#
+# + author - The actor who authored the comment.
+# + body - Identifies the body of the issue.
+# + bodyHTML - The body rendered to HTML.
+# + bodyResourcePath - The http path for this issue body
+# + bodyText - Identifies the body of the issue rendered to text.
+# + bodyUrl - The http URL for this issue body
+# + closed - `true` if the object is closed (definition of closed may depend on type)
+# + closedAt - Identifies the date and time when the object was closed.
+# + createdAt - Identifies the date and time when the object was created.
+# + createdViaEmail - Check if this comment was created via an email reply.
+# + databaseId - Identifies the primary key from the database.
+# + id - ID
+# + isPinned - Indicates whether or not this issue is currently pinned to the repository issues list
+# + isReadByViewer - Is this issue read by the viewer
+# + lastEditedAt - The moment the editor made the last edit
+# + locked - `true` if the object is locked
+# + number - Identifies the issue number.
+# + publishedAt - Identifies when the comment was published at.
+# + resourcePath - The HTTP path for this issue
+# + title - Identifies the issue title.
+# + updatedAt - Identifies the date and time when the object was last updated.
+# + url - The HTTP URL for this issue
+# + viewerDidAuthor - Did the viewer author this comment.
+# + viewerCanUpdate - Check if the current viewer can update this object.
+public type Issue record {
+    Actor? author?;
+    string? body?;
+    string bodyHTML?;
+    string bodyResourcePath?;
+    string bodyText?;
+    string bodyUrl?;
+    boolean closed?;
+    string? closedAt?;
+    string createdAt?;
+    boolean createdViaEmail?;
+    int? databaseId?;
+    int id;
+    boolean? isPinned?;
+    boolean? isReadByViewer?;
+    string? lastEditedAt?;
+    boolean locked?;
+    int number;
+    string? publishedAt?;
+    string resourcePath?;
+    string title?;
+    string updatedAt?;
+    string url?;
+    boolean viewerDidAuthor?;
+    boolean viewerCanUpdate?;
+};
+
+# Represent GitHub actor.
+#
+# + login - The username of the actor.
+# + resourcePath - The HTTP path for this actor.
+# + url - The HTTP URL for this actor.
+# + avatarUrl - A URL pointing to the actor's public avatar.
+public type Actor record {
+    string login;
+    string resourcePath?;
+    string url?;
+    string avatarUrl?;
 };

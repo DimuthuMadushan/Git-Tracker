@@ -1,6 +1,6 @@
 # Git Tracker
 
-Git Tracker is a GraphQL service written in Ballerina that connects with the GitHub REST API, GitHub GraphQL API and the Ballerina GitHub connector. It enables tracking and monitoring of Git repositories.
+Git Tracker is a GraphQL service written in Ballerina that connects with the GitHub REST API. It enables tracking and monitoring of Git repositories.
 
 ## Features
 

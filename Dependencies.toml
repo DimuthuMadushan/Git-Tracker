@@ -57,9 +57,6 @@ dependencies = [
 	{org = "ballerina", name = "os"},
 	{org = "ballerina", name = "time"}
 ]
-modules = [
-	{org = "ballerina", packageName = "file", moduleName = "file"}
-]
 
 [[package]]
 org = "ballerina"
@@ -285,15 +282,6 @@ dependencies = [
 
 [[package]]
 org = "ballerina"
-name = "regex"
-version = "1.4.3"
-dependencies = [
-	{org = "ballerina", name = "jballerina.java"},
-	{org = "ballerina", name = "lang.string"}
-]
-
-[[package]]
-org = "ballerina"
 name = "task"
 version = "2.3.2"
 dependencies = [
@@ -363,44 +351,15 @@ modules = [
 ]
 
 [[package]]
-org = "ballerinax"
-name = "client.config"
-version = "1.0.1"
-dependencies = [
-	{org = "ballerina", name = "http"},
-	{org = "ballerina", name = "oauth2"}
-]
-
-[[package]]
-org = "ballerinax"
-name = "github"
-version = "4.5.0"
-dependencies = [
-	{org = "ballerina", name = "http"},
-	{org = "ballerina", name = "lang.runtime"},
-	{org = "ballerina", name = "log"},
-	{org = "ballerina", name = "mime"},
-	{org = "ballerina", name = "os"},
-	{org = "ballerina", name = "regex"},
-	{org = "ballerinai", name = "observe"},
-	{org = "ballerinax", name = "client.config"}
-]
-modules = [
-	{org = "ballerinax", packageName = "github", moduleName = "github"}
-]
-
-[[package]]
 org = "dimuthu"
 name = "GitTracker"
 version = "0.1.0"
 dependencies = [
-	{org = "ballerina", name = "file"},
 	{org = "ballerina", name = "graphql"},
 	{org = "ballerina", name = "http"},
 	{org = "ballerina", name = "io"},
 	{org = "ballerina", name = "test"},
 	{org = "ballerinai", name = "observe"},
-	{org = "ballerinax", name = "github"},
 	{org = "xlibb", name = "pubsub"}
 ]
 modules = [
